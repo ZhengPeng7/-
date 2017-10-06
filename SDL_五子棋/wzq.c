@@ -1,4 +1,3 @@
-//×÷ÕßQQºÅ:1945993626
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <time.h>
@@ -7,7 +6,7 @@
 #define N 15
 
 #define S 3 //STATE
-#define J 6 //JOIN_DEGREE //0,1,2,3,4,5 // >=5 ÊÓÍ¬Îª=5
+#define J 6 //JOIN_DEGREE //0,1,2,3,4,5 // >=5 è§†åŒä¸º=5
 #define F 3 //FREE_DEGREE
 
 #define HUMAN 1
@@ -178,7 +177,7 @@ void power_off(BOARD * board, int x, int y)
 	}
 }
 
-//²»°üº¬(x,y)
+//ä¸åŒ…å«(x,y)
 void join_degree(BOARD * board, int x, int y, int dx, int dy, int state, int * join_degree, int * free_degree)
 {
 	*join_degree=0;
@@ -581,7 +580,7 @@ int evaluate(BOARD * board, int state, int level, int alpha, int beta)
 				{
 					if((level+1)==MAX_LEVEL)
 					{
-						//ÆÀ¹Àlevel+1¾ÖÊÆ(not this level)
+						//è¯„ä¼°level+1å±€åŠ¿(not this level)
 						t=0;
 						for(a=1;a<J-1;a++)
 						{
@@ -605,8 +604,8 @@ int evaluate(BOARD * board, int state, int level, int alpha, int beta)
 						beta=t;
 						if (level == 0) //get the best x&y
 						{
-							board->temp_X=i; //x×ø±ê
-							board->temp_Y=j; //y×ø±ê
+							board->temp_X=i; //xåæ ‡
+							board->temp_Y=j; //yåæ ‡
 						}
 					}
 					if(t<=alpha)
@@ -641,26 +640,26 @@ int evaluate(BOARD * board, int state, int level, int alpha, int beta)
 */
 
 /*
-function alphabeta(node, depth, ¦Á, ¦Â, Player)         
+function alphabeta(node, depth, Î±, Î², Player)         
     if  depth = 0 or node is a terminal node
         return the heuristic value of node
-    if  Player = MaxPlayer // ¼«´ó½Úµã
-        for each child of node // ¼«Ğ¡½Úµã
-            ¦Á := max(¦Á, alphabeta(child, depth-1, ¦Á, ¦Â, not(Player) ))   
-            if ¦Â ¡Ü ¦Á // ¸Ã¼«´ó½ÚµãµÄÖµ>=¦Á>=¦Â£¬¸Ã¼«´ó½ÚµãºóÃæµÄËÑË÷µ½µÄÖµ¿Ï¶¨»á´óÓÚ¦Â£¬Òò´Ë²»»á±»ÆäÉÏ²ãµÄ¼«Ğ¡½ÚµãËùÑ¡ÓÃÁË¡£¶ÔÓÚ¸ù½Úµã£¬¦ÂÎªÕıÎŞÇî
+    if  Player = MaxPlayer // æå¤§èŠ‚ç‚¹
+        for each child of node // æå°èŠ‚ç‚¹
+            Î± := max(Î±, alphabeta(child, depth-1, Î±, Î², not(Player) ))   
+            if Î² â‰¤ Î± // è¯¥æå¤§èŠ‚ç‚¹çš„å€¼>=Î±>=Î²ï¼Œè¯¥æå¤§èŠ‚ç‚¹åé¢çš„æœç´¢åˆ°çš„å€¼è‚¯å®šä¼šå¤§äºÎ²ï¼Œå› æ­¤ä¸ä¼šè¢«å…¶ä¸Šå±‚çš„æå°èŠ‚ç‚¹æ‰€é€‰ç”¨äº†ã€‚å¯¹äºæ ¹èŠ‚ç‚¹ï¼ŒÎ²ä¸ºæ­£æ— ç©·
                 break                             (* Beta cut-off *)
-        return ¦Á
-    else // ¼«Ğ¡½Úµã
-        for each child of node // ¼«´ó½Úµã
-            ¦Â := min(¦Â, alphabeta(child, depth-1, ¦Á, ¦Â, not(Player) )) // ¼«Ğ¡½Úµã
-            if ¦Â ¡Ü ¦Á // ¸Ã¼«´ó½ÚµãµÄÖµ<=¦Â<=¦Á£¬¸Ã¼«Ğ¡½ÚµãºóÃæµÄËÑË÷µ½µÄÖµ¿Ï¶¨»áĞ¡ÓÚ¦Á£¬Òò´Ë²»»á±»ÆäÉÏ²ãµÄ¼«´ó½ÚµãËùÑ¡ÓÃÁË¡£¶ÔÓÚ¸ù½Úµã£¬¦ÁÎª¸ºÎŞÇî
+        return Î±
+    else // æå°èŠ‚ç‚¹
+        for each child of node // æå¤§èŠ‚ç‚¹
+            Î² := min(Î², alphabeta(child, depth-1, Î±, Î², not(Player) )) // æå°èŠ‚ç‚¹
+            if Î² â‰¤ Î± // è¯¥æå¤§èŠ‚ç‚¹çš„å€¼<=Î²<=Î±ï¼Œè¯¥æå°èŠ‚ç‚¹åé¢çš„æœç´¢åˆ°çš„å€¼è‚¯å®šä¼šå°äºÎ±ï¼Œå› æ­¤ä¸ä¼šè¢«å…¶ä¸Šå±‚çš„æå¤§èŠ‚ç‚¹æ‰€é€‰ç”¨äº†ã€‚å¯¹äºæ ¹èŠ‚ç‚¹ï¼ŒÎ±ä¸ºè´Ÿæ— ç©·
                 break                             (* Alpha cut-off *)
-        return ¦Â 
+        return Î² 
 (* Initial call *)
 alphabeta(origin, depth, -infinity, +infinity, MaxPlayer)
 */
 
-//ÂÖµ½ state Âä×Ó, level=0, alpha=-MAX_INT, beta=MAX_INT
+//è½®åˆ° state è½å­, level=0, alpha=-MAX_INT, beta=MAX_INT
 int evaluate(BOARD * board, int state, int level, int alpha, int beta)
 {
 	int i,j,self,enemy,t,a,b;
@@ -700,10 +699,10 @@ int evaluate(BOARD * board, int state, int level, int alpha, int beta)
 		return (level%2==0 ? -MAX_INT : +MAX_INT);
 	}
 	else
-	if(board->situation[self][4][2]>0 || board->situation[self][4][1]>0) //±ØÊ¤
+	if(board->situation[self][4][2]>0 || board->situation[self][4][1]>0) //å¿…èƒœ
 	{
 		if(level>0) return (level%2==0 ? +MAX_INT : -MAX_INT);
-		//else ĞèÒªÀûÓÃºóĞø³ÌĞò¼ÆËãtemp_X, temp_Y×ø±ê
+		//else éœ€è¦åˆ©ç”¨åç»­ç¨‹åºè®¡ç®—temp_X, temp_Yåæ ‡
 	}
 
 
@@ -722,8 +721,8 @@ int evaluate(BOARD * board, int state, int level, int alpha, int beta)
 						alpha=t;
 						if (level==0)
 						{
-							board->temp_X=i; //x×ø±ê
-							board->temp_Y=j; //y×ø±ê
+							board->temp_X=i; //xåæ ‡
+							board->temp_Y=j; //yåæ ‡
 						}
 					}
 					take_up(board);
