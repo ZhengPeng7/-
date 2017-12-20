@@ -1,0 +1,699 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="http://www.laoqianzhuang.com/statics/2016style/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://www.laoqianzhuang.com/statics/2016style/css/style.css" rel="stylesheet" type="text/css" />
+
+<head>
+  <title>404</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+  <script type="text/javascript" src="http://www.laoqianzhuang.com/statics/2016style/js/jquery-1.8.2.min.js"></script>
+  <script src="http://www.laoqianzhuang.com/statics/2016style/js/common.js"></script>
+  <script src="http://www.laoqianzhuang.com/statics/2016style/js/main.js"></script>
+  <script type="text/javascript">
+    var JUMP = {
+      "hash": (!window.location.hash) ? "" : window.location.hash,
+      "agent": navigator.userAgent,
+      "to_mobile": function (r) {
+        if ((this.agent.indexOf('Android') != -1 || this.agent.indexOf('Mobile') != -1) && this.hash != '#pc') {
+          window.location.href = r;
+        }
+      }
+    };
+    JUMP.to_mobile("http://www.laoqianzhuang.com/404/m/");
+
+  </script>
+</head>
+
+<body>
+  <!--头部S-->
+  <div id="site_nav" class="topnav">
+    <div class="site_nav wrapper">
+      <div id="J_sidemap" class="m_hlink sitemap">
+        <span class="lqzqx">老钱庄旗下站：</span>
+        <a href="http://bbs.laoqianzhuang.com/" target="_blank" title="老钱庄论坛">老钱庄论坛</a>
+        <a href="http://www.538538.com/" target="_blank" title="百宝箱">百宝箱</a>
+        <a href="http://v.lqz.cn/" target="_blank" title="股票商城">聚宝盆</a>
+        <a href="http://e.weibo.com/laoqianzhuang" target="_blank" title="老钱庄微博">老钱庄微博</a>
+        <a href="javascript:void(0)" id="phone_erweima" onmouseover="this.getElementsByTagName('div')[0].style.display='block';"
+          onmouseout="this.getElementsByTagName('div')[0].style.display='none';"> 手机版
+          <div></div>
+        </a>
+        <a href="javascript:void(0)" id="phone_app" onmouseover="this.getElementsByTagName('div')[0].style.display='block';" onmouseout="this.getElementsByTagName('div')[0].style.display='none';">
+          <font color='red'>APP客户端</font>
+          <div></div>
+        </a>
+      </div>
+      <div class="login fr" id="header_login">
+        <script type="text/javascript">document.write('<iframe src="http://www.laoqianzhuang.com/index.php?m=member&c=index&a=mini&forward=' + encodeURIComponent(location.href) + '&siteid=1" allowTransparency="true"  height="32" frameborder="0" scrolling="no"></iframe>')</script>
+      </div>
+    </div>
+  </div>
+
+
+  <!--头部E-->
+
+  <!--内容S-->
+  <div class="wrapper">
+
+    <!--logo-s-->
+
+    <div class="wrap-box">
+      <div class="loc-left">
+        <a href="http://www.laoqianzhuang.com/">
+          <img src="http://www.laoqianzhuang.com/statics/2016style/images/logo.png" alt="老钱庄">
+        </a>
+      </div>
+      <div class="loc-right" id="tab_switch">
+        <div class="tabs-wrap">
+          <ul>
+            <li class="ths-tab  selected">
+              <a href="javascript:;">股票</a>
+            </li>
+            <li class="ths-tab">
+              <a href="javascript:;">资讯</a>
+            </li>
+            <li class="ths-tab">
+              <a href="javascript:;">名家</a>
+            </li>
+          </ul>
+          <div class="triangle" data-width="8" id="zx_triangle" style="left: 18.5px;">
+            <span></span>
+          </div>
+        </div>
+        <div class="input-area">
+          <form>
+            <input id="keyword1" class="s-key leb-tip" value="请输入股票代码或名称" type="text" autocomplete="off" onfocus="if(this.value=='请输入股票代码或名称'){this.value=''}"
+              onblur="if(this.value==''){this.value='请输入股票代码或名称'}" onkeyup="stock_search()">
+            <button class="s-btn ta-own-box" id="btnstocksearch" data-taid="web_xuangu" data-fid="web_indexvip">搜索</button>
+            <div class="hot-serch-stock"></div>
+          </form>
+        </div>
+
+        <div class="input-area" style="display:none;">
+          <form action="http://www.laoqianzhuang.com/index.php" method="get" target="_blank">
+            <input type="hidden" name="m" value="search" />
+            <input type="hidden" name="c" value="index" />
+            <input type="hidden" name="a" value="init" />
+            <input type="hidden" name="typeid" value="1" id="typeid" />
+            <input type="hidden" name="siteid" value="1" id="siteid" />
+            <input id="keyword_zx" class="s-key leb-tip" value="请输入关键字" type="text" name="q" autocomplete="off" onfocus="if(this.value=='请输入关键字'){this.value=''}"
+              onblur="if(this.value==''){this.value='请输入关键字'}" onkeyup="info_search();">
+            <button type="submit" class="s-btn ta-own-box">搜索</button>
+          </form>
+        </div>
+        <div class="input-area" style="display:none;">
+          <form action="http://www.laoqianzhuang.com/index.php" method="get" target="_blank">
+            <input type="hidden" name="m" value="search" />
+            <input type="hidden" name="c" value="index" />
+            <input type="hidden" name="a" value="init" />
+            <input type="hidden" name="typeid" value="1" id="typeid" />
+            <input type="hidden" name="siteid" value="1" id="siteid" />
+            <input type="hidden" name="mj" value="1" id="mj" />
+            <input id="keyword_mj" class="s-key leb-tip" value="老钱庄名家" type="text" name="q" autocomplete="off" onfocus="if(this.value=='老钱庄名家'){this.value=''}"
+              onblur="if(this.value==''){this.value='老钱庄名家'}" onkeyup="mj_search();">
+            <button class="s-btn ta-own-box" id="mjSearch">搜索</button>
+          </form>
+        </div>
+        <div class="search-tip-box" id="search-tip-box" style="max-height:352px; overflow: hidden; display:none;">
+          <div class="sbox-bd" style="padding:0px; width: 100%;">
+            <dl class="stips">
+              <dt>大家都在搜：</dt>
+              <ul>
+
+              </ul>
+            </dl>
+          </div>
+        </div>
+
+
+        <div class="hot-search-word"></div>
+        <div id="hotSearchWordBottom" class="hotSearchWordBottom"> </div>
+      </div>
+    </div>
+    <script>
+      //股票搜索
+      function stock_search() {
+        $("#search-tip-box").css('display', 'none');
+        var params = $('#keyword1').val();
+        var url = "http://www.laoqianzhuang.com/index.php?m=content&c=index&a=stock_search", html = '';
+        $.ajax({
+          type: "get",
+          dataType: "jsonp",
+          url: url,
+          jsonp: "callback",
+          jsonpCallback: "stock_callback",
+          data: '&stock_code=' + params,
+          success: function (data) {
+            if (data) {
+              var length = data.length;
+              if (length > 0) {
+                var i = 0;
+                var str = '<ul class="search_ul"><li >代码</li><li>名称</li><li>简称</li><li>类型</li></ul>';
+                for (i; i < length; i++) {
+
+                  str += "<a href='/quotes/" + data[i]['code'] + "/'>" + '<ul class="stock_ul">';
+                  str += '<li>' + data[i]['code'] + '</li>';
+                  str += '<li>' + data[i]['name'] + '</li>';
+                  str += '<li>' + data[i]['alias'] + '</li>';
+                  str += '<li>' + data[i]['type'] + '</li>';
+                  str += '</ul></a>';
+                  $('#search-tip-box').css('display', 'block');
+                  $('.sbox-bd ul').html(str);
+                }
+              }
+            }
+          }
+        });
+
+      }
+      //名家搜索
+      function mj_search() {
+        $("#search-tip-box").css('display', 'none');
+        var params = $('#keyword_mj').val();
+        var url = "http://www.laoqianzhuang.com/index.php?m=content&c=index&a=mj_search", html = '';
+        $.ajax({
+          type: "get",
+          dataType: "jsonp",
+          url: url,
+          jsonp: "callback",
+          jsonpCallback: "mj_callback",
+          data: '&mj_name=' + params,
+          success: function (data) {
+            if (data) {
+              var length = data.length;
+              if (length > 0) {
+                var i = 0;
+                var str = '';
+                for (i; i < length; i++) {
+                  str += "<a target='_blank' href='/mj_" + data[i]['userid'] + "/'>" + data[i]['name'] + '&nbsp;&nbsp;&nbsp;&nbsp;' + data[i]['designation'] + '</a><br />';
+                  $('#search-tip-box').css('display', 'block');
+                  $('.sbox-bd ul').html(str);
+                }
+              }
+            }
+
+          }
+        });
+
+      }
+      //资讯搜索
+      function info_search() {
+        $("#search-tip-box").css('display', 'none');
+        var params = $('#keyword_zx').val();
+        var url = "http://www.laoqianzhuang.com/index.php?m=content&c=index&a=info_search", html = '';
+        $.ajax({
+          type: "get",
+          dataType: "jsonp",
+          url: url,
+          jsonp: "callback",
+          jsonpCallback: "info_callback",
+          data: '&title=' + params,
+          success: function (data) {
+            if (data) {
+              var length = data.length;
+              if (length > 0) {
+                var i = 0;
+                var str2 = '';
+                for (i; i < length; i++) {
+                  str2 += '<a target="_blank" href=' + data[i]['url'] + '>' + data[i]['title'] + '</a><br />';
+                  $('#search-tip-box').css('display', 'block');
+                  $('.sbox-bd ul').html(str2);
+                }
+
+              }
+            }
+          }
+        });
+
+      }
+
+    </script>
+    <style>
+      .leb-tip {padding-left:10px !important;}
+        .sbox-bd dt {background-color:#f5f5f5;font-size:15px;color:#3d9fe1;padding:5px 0px 5px 8px !important;border-bottom:1px #efefef solid;font-weight:700;}
+        .sbox-bd ul {background-color:#fff;font-size:13px;color:#000;}
+        .sbox-bd ul a {width:337px;display:inline-block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;color:#333;padding:0px 8px 0px 15px !important;line-height:32px;text-decoration:none;font-size:14px !important;}
+        .sbox-bd ul a:hover {background:#e5e5e5;}
+        .search_ul {width:360px;}
+        .search_ul li {float:left;width:25%;text-align:center;}
+        .stock_ul {width:350px;margin-left:1px;}
+        .stock_ul li {float:left;width:25%;text-align:center;}
+
+    </style>
+
+    <!--logo-e-->
+
+    <!--导航栏目S-->
+    <div class="guideban ta-parent-box">
+      <div class="triangle" id="triangle" data-width="6" style="left: 42.5px;"></div>
+
+      <!--导航s-->
+
+      <div id="block_3362">
+        <ul class="chanel">
+          <li class="first">
+            <em>
+              <a href="http://www.laoqianzhuang.com/" target="_blank" title="首页" style="font-weight: normal;">首页</a>
+            </em>
+          </li>
+          <li class="nav_gp">
+            <em>
+              <a href="http://stock.laoqianzhuang.com/" target="_blank" title="股票" style="font-weight: normal;">股票</a>
+            </em>
+          </li>
+          <li class="nav_cj">
+            <em>
+              <a href="http://finance.laoqianzhuang.com/" target="_blank" title="财经" style="font-weight: normal;">财经</a>
+            </em>
+          </li>
+          <li class="nav_lc">
+            <em>
+              <a href="http://money.laoqianzhuang.com/" target="_blank" title="理财" style="font-weight: normal;">理财</a>
+            </em>
+          </li>
+          <li class="nav_hj">
+            <em>
+              <a href="http://gold.laoqianzhuang.com/" target="_blank" title="黄金" style="font-weight: normal;">黄金</a>
+            </em>
+          </li>
+          <li class="nav_wjs">
+            <em>
+              <a href="http://wjs.laoqianzhuang.com/" target="_blank" title="文交所" style="font-weight: normal;">文交所</a>
+            </em>
+          </li>
+          <li class="nav_bk">
+            <em>
+              <a href="http://www.laoqianzhuang.com/baike/" target="_blank" title="百科" style="font-weight: normal;">百科</a>
+            </em>
+          </li>
+          <li class="nav_hq">
+            <em>
+              <a href="http://www.laoqianzhuang.com/quotes/" target="_blank" title="行情" style="font-weight: normal;">行情</a>
+            </em>
+          </li>
+          <li class="nav_mj">
+            <em>
+              <a href="http://www.laoqianzhuang.com/mj/" target="_blank" title="名家" style="font-weight: normal;">名家</a>
+            </em>
+          </li>
+          <li class="nav_gszb">
+            <em>
+              <a href="http://www.lqz.cn/" target="_blank" title="股市直播" style="font-weight: normal;">股市直播</a>
+            </em>
+          </li>
+          <li class="nav_sjz">
+            <em>
+              <a href="http://m.laoqianzhuang.com/" target="_blank" title="手机站" style="font-weight: normal;">手机站</a>
+            </em>
+          </li>
+          <li class="nav_gsdh">
+            <em>
+              <a href="http://www.laoqianzhuang.com/map.html" target="_blank" title="网站导航" style="font-weight: normal;">网站导航</a>
+            </em>
+          </li>
+        </ul>
+      </div>
+
+      <!--子导航s-->
+      <div id="block_3363" class="chanel-detail">
+        <!--股票ID8-->
+        <ul class="clearfix" id="nav_gp">
+          <li>
+            <a href="http://stock.laoqianzhuang.com/redianticai/" target="_blank" title="热点题材">热点题材</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/zhulidongxiang/" target="_blank" title="主力动向">主力动向</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/jinguwajue/" target="_blank" title="金股挖掘">金股挖掘</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/caopanbidu/" target="_blank" title="操盘必读">操盘必读</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/waiweiyingxiang/" target="_blank" title="外围影响">外围影响</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/gushizhanwang/" target="_blank" title="股市展望">股市展望</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/zhuanjiajiepan/" target="_blank" title="专家解盘">专家解盘</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/meiriyigu/" target="_blank" title="每日一股">每日一股</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/shichangchuanwen/" target="_blank" title="市场传闻">市场传闻</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/shichangjiaodian/" target="_blank" title="市场焦点">市场焦点</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/simudongtai/" target="_blank" title="私募动态">私募动态</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/gegudianjing/" target="_blank" title="个股点睛">个股点睛</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/xinguzhuanlan/" target="_blank" title="新股专栏">新股专栏</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/chuangyeban/" target="_blank" title="创业板">创业板</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/jijinzhongcanggu/" target="_blank" title="基金重仓股">基金重仓股</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/hangyedongtai/" target="_blank" title="行业动态">行业动态</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/gegushuju/" target="_blank" title="个股数据">个股数据</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/gongsiyaowen/" target="_blank" title="公司要闻">公司要闻</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/jigouneican/" target="_blank" title="机构内参">机构内参</a>
+          </li>
+          <li>
+            <a href="http://stock.laoqianzhuang.com/gainiangu/" target="_blank" title="概念股">概念股</a>
+          </li>
+          <li>
+            <a href="http://t0.laoqianzhuang.com/" target="_blank" title="股票T + 0">股票T + 0</a>
+          </li>
+        </ul>
+        <!--财经ID7-->
+        <ul class="clearfix" id="nav_cj">
+          <li>
+            <a href="http://finance.laoqianzhuang.com/zhongdashixiang/" target="_blank" title="重大事项">重大事项</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/caijingpinglun/" target="_blank" title="财经评论">财经评论</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/caijingzhuanti/" target="_blank" title="财经专题">财经专题</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/guoneicaijing/" target="_blank" title="国内财经">国内财经</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/guojicaijing/" target="_blank" title="国际财经">国际财经</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/hongguanjingji/" target="_blank" title="宏观经济">宏观经济</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/jinrongziben/" target="_blank" title="金融资本">金融资本</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/shangyezixun/" target="_blank" title="商业资讯">商业资讯</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/xiaofeiredian/" target="_blank" title="消费热点">消费热点</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/yule/" target="_blank" title="娱乐">娱乐</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/reyihuati/" target="_blank" title="热议话题">热议话题</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/fangchan/" target="_blank" title="房产">房产</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/keji/" target="_blank" title="科技">科技</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/qiche/" target="_blank" title="汽车">汽车</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/shechipin/" target="_blank" title="奢侈品">奢侈品</a>
+          </li>
+          <li>
+            <a href="http://finance.laoqianzhuang.com/lvyou/" target="_blank" title="旅游">旅游</a>
+          </li>
+        </ul>
+        <!--理财ID6-->
+        <ul class="clearfix" id="nav_lc">
+          <li>
+            <a href="http://money.laoqianzhuang.com/licaiguihua/" target="_blank" title="理财规划">理财规划</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/touzizhidao/" target="_blank" title="投资指导">投资指导</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/caifumingren/" target="_blank" title="财富名人">财富名人</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/zhongchanshenghuo/" target="_blank" title="中产生活">中产生活</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/shoucangwanhuatong/" target="_blank" title="收藏">收藏</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/yinhangzixun/" target="_blank" title="银行信息">银行信息</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/baoxianzixun/" target="_blank" title="保险资讯">保险资讯</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/zhuanjiazhidao/" target="_blank" title="创业指导">创业指导</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/jijin/" target="_blank" title="基金">基金</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/zhaiquan/" target="_blank" title="债券">债券</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/waihui/" target="_blank" title="外汇">外汇</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/zcsanshiliuji/" target="_blank" title="职场36计">职场36计</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/touzi/" target="_blank" title="商品投资">商品投资</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/guijinshu/" target="_blank" title="贵金属投资">贵金属投资</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/qianbi/" target="_blank" title="钱币邮票投资">钱币邮票投资</a>
+          </li>
+          <li>
+            <a href="http://money.laoqianzhuang.com/wjs/" target="_blank" title="大圆普洱">大圆普洱</a>
+          </li>
+        </ul>
+        <!--黄金-->
+        <ul class="clearfix" id="nav_hj">
+          <li>
+            <a href="http://gold.laoqianzhuang.com/huangjinhangqing/" target="_blank" title="黄金行情">黄金行情</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/jindianjinjia/" target="_blank" title="实物黄金">实物黄金</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/huangjintd/" target="_blank" title="黄金t+d">黄金t+d</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/zhihuangjin/" target="_blank" title="纸黄金">纸黄金</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/xianhuohuangjin/" target="_blank" title="现货黄金">现货黄金</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/guojihuangjin/" target="_blank" title="国际黄金">国际黄金</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/huangjinqihuo/" target="_blank" title="黄金期货">黄金期货</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/guijinshu/" target="_blank" title="贵金属">贵金属</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/jigoupinglun/" target="_blank" title="机构评论">机构评论</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/huangjintouzijiqiao/" target="_blank" title="投资技巧">投资技巧</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/huangjinwenda/" target="_blank" title="黄金问答">黄金问答</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/mjpl/" target="_blank" title="名家评论">名家评论</a>
+          </li>
+          <li>
+            <a href="http://gold.laoqianzhuang.com/jiaoyu/" target="_blank" title="投资者教育">投资者教育</a>
+          </li>
+        </ul>
+        <!--文交所ID433-->
+        <ul class="clearfix" id="nav_wjs">
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/wjstt/" target="_blank" title="头条">头条</a>
+          </li>
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/ybkzx/" target="_blank" title="最新资讯">最新资讯</a>
+          </li>
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/ybkhq/" target="_blank" title="行情走势">行情走势</a>
+          </li>
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/cpzn/" target="_blank" title="藏品指南">藏品指南</a>
+          </li>
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/sgtg/" target="_blank" title="申购托管">申购托管</a>
+          </li>
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/xsrm/" target="_blank" title="新手入门">新手入门</a>
+          </li>
+          <li>
+            <a href="http://wjs.laoqianzhuang.com/djxw/" target="_blank" title="独家新闻">独家新闻</a>
+          </li>
+        </ul>
+        <!--行情ID453-->
+        <ul class="clearfix" id="nav_hq">
+          <li>
+            <a href="http://www.laoqianzhuang.com/quotes/gn/" target="_blank" title="概念板块">概念板块</a>
+          </li>
+          <li>
+            <a href="http://www.laoqianzhuang.com/quotes/dy/" target="_blank" title="概念板块">地域板块</a>
+          </li>
+          <li>
+            <a href="http://www.laoqianzhuang.com/quotes/thshy/" target="_blank" title="概念板块">行业板块</a>
+          </li>
+          <li>
+            <a href="http://www.laoqianzhuang.com/quotes/zjhhy/" target="_blank" title="概念板块">证监会板块</a>
+          </li>
+        </ul>
+      </div>
+      <!--子导航e-->
+
+    </div>
+
+    <!--子导航e-->
+    <div class="false_404 clearfix">
+      <img class="img_404" src="http://www.laoqianzhuang.com/statics/2016style/images/404pic.gif" title="" alt="" />
+      <div class="text_404">
+        <span class="title_404">很抱歉你访问的页面不存在或被删除</span>
+        <span class="back_404 clearfix">
+          <a href="javascript:void(0)" title="" onclick="javascript :history.back(-1);">返回上一页</a>
+          <a href="http://www.laoqianzhuang.com/" class="last" title="">返回首页</a>
+        </span>
+      </div>
+    </div>
+    <div class="clearfix comment_404">
+      <h2>
+        <a target="_blank">相关内容推荐</a>
+      </h2>
+
+    </div>
+   
+  </div>
+
+  <script>
+      get_list(9);
+      get_list(25);
+      get_list(12);
+      function get_list(catid){
+          $.ajax({
+            type:'get',
+            url:'http://www.laoqianzhuang.com/index.php?m=content&c=index&a=getCategoryDatabyCateId&catid='+catid,
+            dataType:'jsonp',
+            jsonp:"callback",
+            scriptCharset: 'utf-8',
+            async:false,
+            success:function(result){
+                var html='';
+                data = result.list;
+                html += '<div class="ta-parent-box2"><ul class="yahei page_list" tpe-plugin="preview_wap_row">';
+                $.each(data,function(i, n){
+                    if(i == 0){
+                        html += '<li class="first">';
+                        html += '<a title="'+ n.title +'" target="_blank" href="'+ n.url +'">';
+                        html += '<img src="'+ n.thumb +'" alt="'+ n.title +'" width="121" height="75"> </a>';
+                        html += '<a target="_blank" class="title" style="font-weight:bold;" title="'+ n.title +'" href="'+ n.url +'">'+ n.title +'</a></li>';
+                    }
+                    html += '<li><a href="'+ n.url +'" target="_blank" title="'+ n.title +'">'+ n.title +'</a></li>';
+                });
+                html += '</ul></div>';
+                $(".comment_404").append(html);
+            }
+        });
+      }
+
+  </script>
+  <!--404 CNZZ-->
+
+  <div class="footer">
+    <div class="footer2">
+      <div class="link">
+        <a rel="nofollow" target="_blank" title="关于老钱庄" href="http://www.laoqianzhuang.com/html/about/aboutus/">关于老钱庄</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a rel="nofollow" target="_blank" title="广告合作" href="http://www.laoqianzhuang.com/html/about/advertising/">广告合作</a>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a rel="nofollow" target="_blank" title="网站导航" href="http://123.laoqianzhuang.com/">网站导航</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a trel="nofollow" arget="_blank" title="意见反馈" href="http://www.laoqianzhuang.com/html/about/Feedback/">意见反馈</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a rel="nofollow" target="_blank" title="免责声明" href="http://www.538538.com/link/mzsm.html">免责声明</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a target="_blank" title="友情链接" href="http://www.538538.com/morelink.html">友情链接</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <a rel="nofollow" target="_blank" title="联系我们" href="http://www.laoqianzhuang.com/html/about/contactus/">联系我们</a>
+      </div>
+      <ul class="parnet" id="lqzull">
+        <a rel="nofollow">
+          <img src="http://www.laoqianzhuang.com/statics/2016style/images/b_03.jpg" width="91" height="40" title="" alt="经营性网站备案信息">
+        </a>
+        <a rel="nofollow">
+          <img src="http://www.laoqianzhuang.com/statics/2016style/images/b_05.jpg" width="127" height="40" title="" alt="广播电视节目制作经营许可证">
+        </a>
+        <a rel="nofollow">
+          <img src="http://www.laoqianzhuang.com/statics/2016style/images/b_07.jpg" width="140" height="40" title="" alt="证券投资资格证 ">
+        </a>
+        <a rel="nofollow">
+          <img src="http://www.laoqianzhuang.com/statics/2016style/images/b_11.gif" width="91" height="40" title="" alt="网上交易保障中心">
+        </a>
+      </ul>
+      <div class="bottom">
+
+        <p>老钱庄财经所载文章、数据仅供参考，使用前请务必仔细阅读免责声明，风险自负。</p>
+        <p>提示：老钱庄财经不作任何"加入会员、承诺收益、利润分成"以及其他非法操作方式进行非法的理财服务。</p>
+        <p>信息产业部信息备案：
+          <a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">闽ICP备17027330号-1</a>
+          茂名市公安局网警备案：4409023010511号</p>
+        <p style="color:#cf0f0f;">客户服务电话:0592-5962326 广告服务咨询QQ：
+          <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2806911298&amp;site=qq&amp;menu=yes" rel="nofollow" target="_blank" title="点击进行交谈">
+            <font style="color:#cf0f0f;">2806911298</font>
+          </a>
+        </p>
+        <p>
+          <a target="_blank" rel="external nofollow" href="http://210.76.65.188/webrecord/innernet/Welcome.jsp?bano=4409023010511">
+            <img src="http://www.laoqianzhuang.com/statics/2016style/images/safenet.gif" width="40" height="48" style="border:0;" alt="网安">
+          </a>
+          <a target="_blank" rel="external nofollow" href="http://210.76.65.188/">
+            <img src="http://www.laoqianzhuang.com/statics/2016style/images/guangdongmaoming.gif" width="40" height="48" style="border:0;"
+              alt="网安">
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <a href="javascript:void(0)" style="display:block; position:fixed; bottom:0px; left:50%; margin-left:620px; background:#000; width:50px; height:50px; background: url(http://www.laoqianzhuang.com/statics/2016style/images/back-top.png) #e5e5e5 no-repeat center center; border:1px solid #e0e0e0; border-bottom:none;"
+    class="back_top"></a>
+  <div style="display:none">
+
+    <script type="text/javascript">
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F664cbb1c2b24427970e202e50831e281' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script>
+        (function () {
+          var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?0f057482363703c9cffd2430f9aada97" : "https://jspassport.ssl.qhimg.com/11.0.1.js?0f057482363703c9cffd2430f9aada97";
+          document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+    <!-- cnzz总统计 -->
+    <script src="https://s22.cnzz.com/z_stat.php?id=1262905145&web_id=1262905145" language="JavaScript"></script>
+    <!-- cnzz统计 -->
+    <script src="https://s22.cnzz.com/z_stat.php?id=1262842262&web_id=1262842262" language="JavaScript"></script>
+    <script src="https://s19.cnzz.com/z_stat.php?id=1262933583&web_id=1262933583" language="JavaScript"></script>
+  </div>
+</body>
+
+</html>
